@@ -1,0 +1,17 @@
+h1= title
+p Welcome to #{title}
+
+p "Hae lokia"
+form(name="haku", action="search", method="post")
+  input(type="text", name="hakusana")
+  input(type="submit", value="hae")
+table
+  tr
+    th aikaleima
+    th nick
+    th viesti
+  each row in rows
+    tr
+      td= row.timestamp
+      td= row.nick
+      td= row.message

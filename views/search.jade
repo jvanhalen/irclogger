@@ -1,0 +1,15 @@
+
+p "Hae lokia"
+form(name="haku", action="hae", method="post")
+  input(type="text", name="hakusana")
+  input(type="submit", value="hae")
+table
+  tr
+    th aikaleima
+    th kirjoittaja
+    th teksti
+  each rivi in rivit
+    tr
+      td= rivi.timestamp
+      td= rivi.user
+      td= rivi.text
