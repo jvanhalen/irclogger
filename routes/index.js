@@ -12,7 +12,6 @@ exports.index = function(req, res){
 };
 
 exports.search = function(req, res){
-  connection.connect();
   connection.query('SELECT * FROM loki LIMIT 100', function(err, rows, fields) {
     if(err) {
       throw err;
@@ -21,5 +20,4 @@ exports.search = function(req, res){
       res.render('index', { title: 'IRC-loggeri' , rows: rows})
     }
   });
-  connection.end();
 };
